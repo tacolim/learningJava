@@ -45,5 +45,23 @@ public class Main {
         long myUnderscoreLong = 9_223_372_036_854_775_807L;
         System.out.println("Established w underscores: " + myUnderscoreLong); // output with no underscores
 
+        // casting
+        int myTotal = (myMinIntValue / 2); // no error b/c var/2 is type int
+        byte myNewByteValue = (byte)(myMinByteValue / 2); // without desired type java thinks var/2 is type int
+        short myNewShortValue = (short)(myMinShortValue / 2); // without desired type java thinks var/2 is type int
+
+        // challenge
+        byte validByte = 100;
+        short validShort = 2000;
+        int validInt = 2000000000;
+        // -1_474_765_480
+        int sumThree = validByte + validShort + validInt;
+
+        long longTotal = 50000 + 10 * (long)(validByte + validShort + validInt);
+
+        System.out.println("long sum works: " + (50000 + 10 * (long)(validByte + validShort + validInt)));
+        System.out.println("long sum works: " + (50000 + 10L * (validByte + validShort + validInt)));
+        System.out.println("long sum busts: " + (long)(50000 + 10 * (validByte + validShort + validInt)));
+
     }
 }
